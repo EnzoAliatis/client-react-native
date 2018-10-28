@@ -8,23 +8,17 @@
 
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
-import { ApolloProvider } from 'react-apollo';
 import HomeContainer from './src/containers/home-container';
-import ApolloClient from 'apollo-boost';
 
-const client = new ApolloClient({
-  uri: 'https://graphql-server-base.herokuapp.com/graphql'
-})
+
 
 type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
-      <ApolloProvider client={client}>
-        <View style={styles.container}>
-          <HomeContainer />
-        </View>
-      </ApolloProvider>
+      <View style={styles.container}>
+        <HomeContainer />
+      </View>
     );
   }
 }
